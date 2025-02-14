@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Sentiment Analysis Web App</h1>
+        <form method="POST">
+            <textarea name="text" rows="5" placeholder="Enter text here..." required></textarea><br><br>
+            <button type="submit">Analyze Sentiment</button>
+        </form>
+        
+        {% if sentiment %}
+            <h3>Sentiment: {{ sentiment }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
