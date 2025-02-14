@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis Web App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Add a favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <div class="logo">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="Sentiment Analysis Logo" class="logo-img">
+            </div>
+            <h1>Sentiment Analysis Web App</h1>
+            <p class="intro-text">
+                Input your text and click "Analyze Sentiment" to determine whether the sentiment is Positive, Negative, or Neutral.
+            </p>
+        </header>
+
+        <!-- Form Section -->
+        <section class="form-section">
+            <h2>Enter Text for Analysis</h2>
+            <form method="POST" action="/" id="sentiment-form">
+                <textarea name="text" rows="6" placeholder="Type or paste your text here..." required></textarea><br><br>
+                <button type="submit" class="btn-submit">Analyze Sentiment</button>
+            </form>
+        </section>
+
+        <!-- Result Section -->
+        {% if sentiment %}
+        <section class="result-section">
+            <h3>Sentiment: <span class="result-text">{{ sentiment }}</span></h3>
+        </section>
+        {% endif %}
+
+        <!-- Footer Section -->
+        <footer>
+            <div class="footer-content">
+                <p>Created with ❤️ by YourName</p>
+                <a href="https://github.com/yourusername/sentiment-analysis" target="_blank" class="github-link">View on GitHub</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- External JS for functionality, optional -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
