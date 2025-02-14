@@ -1,0 +1,7 @@
+text,sentiment
+"I love this product!",positive
+"This is the worst service ever.",negative
+"Okay experience, nothing special.",neutral
+"Absolutely amazing!",positive
+"Will never buy this again.",negative
+"Not bad, could be better.",neutral
